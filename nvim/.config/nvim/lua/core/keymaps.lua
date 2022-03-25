@@ -31,7 +31,7 @@ map("n", "<leader>P", '"+p')
 ------------
 -- Packer --
 ------------
-map("n", "<leader>pp", ":PackerSync<CR>")
+map("n", "<leader>ps", ":PackerSync<CR>")
 
 -- Comment.nvim
 -- Linewise toggle current line using C-/
@@ -58,3 +58,5 @@ map("n", "<leader>fr", createCmd("live_grep"))
 map("n", "<leader>fb", createCmd("buffers"))
 map("n", "<leader>fh", createCmd("help_tags"))
 map("n", "<leader>ft", createCmd("colorscheme"))
+
+map('n', '<leader>o', "<cmd>lua require('fzf-lua').files()<CR>")

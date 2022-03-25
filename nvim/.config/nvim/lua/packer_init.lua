@@ -8,9 +8,8 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 cmd [[packadd packer.nvim]]
-local packer = require 'packer'
 
-return packer.startup(function()
+require'packer'.startup(function()
   use 'wbthomason/packer.nvim'
   use {
     'neovim/nvim-lspconfig',
@@ -39,6 +38,11 @@ return packer.startup(function()
   }
 
   use "p00f/nvim-ts-rainbow"      -- rainbow parentheses for neovim
+  use { 'ibhagwan/fzf-lua',
+  -- optional for icon support
+    requires = { 'kyazdani42/nvim-web-devicons' }
+  }
+  use { 'junegunn/fzf', run = './install --bin' }
 
   -- 'junegunn/fzf';
   -- 'junegunn/fzf.vim';

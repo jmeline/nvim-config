@@ -17,6 +17,10 @@ local opt = vim.opt         		      -- Set options (global/buffer/windows-scoped
 
 g.noshowmode = true -- Disables standart -INSERT-, -NORMAL-, etc
 g.noswapfile = true
+cmd [[
+    set timeout timeoutlen=200
+  set notimeout nottimeout
+]]
 -----------------------------------------------------------
 -- General
 -----------------------------------------------------------
