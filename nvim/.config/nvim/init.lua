@@ -13,7 +13,6 @@ require "packer_init"
 
 -------------------- Load PLUGINS ----------------------------------
 
-require "plugins/nvim-tree"
 require "plugins/lualine"
 require "plugins/nvim-cmp"
 require "plugins/luasnip"
