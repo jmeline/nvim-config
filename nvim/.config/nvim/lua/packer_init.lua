@@ -39,7 +39,7 @@ require'packer'.startup(function()
 
   use "p00f/nvim-ts-rainbow"      -- rainbow parentheses for neovim
   use { 'ibhagwan/fzf-lua',
-  -- optional for icon support
+    -- optional for icon support
     requires = { 'kyazdani42/nvim-web-devicons' }
   }
   use { 'junegunn/fzf', run = './install --bin' }
@@ -53,6 +53,29 @@ require'packer'.startup(function()
   use {
     'nvim-telescope/telescope.nvim',
     {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+  }
+
+  use {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim"
+    },
+    config = function ()
+      -- If you want icons for diagnostic errors, you'll need to define them somewhere:
+      vim.fn.sign_define("DiagnosticSignError",
+      {text = " ", texthl = "DiagnosticSignError"})
+      vim.fn.sign_define("DiagnosticSignWarn",
+      {text = " ", texthl = "DiagnosticSignWarn"})
+      vim.fn.sign_define("DiagnosticSignInfo",
+      {text = " ", texthl = "DiagnosticSignInfo"})
+      vim.fn.sign_define("DiagnosticSignHint",
+      {text = "", texthl = "DiagnosticSignHint"})
+      -- NOTE: this is changed from v1.x, which used the old style of highlight groups
+      -- in the form "LspDiagnosticsSignWarning"
+    end
   }
 
   use 'machakann/vim-sandwich'

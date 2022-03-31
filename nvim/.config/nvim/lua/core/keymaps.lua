@@ -44,7 +44,7 @@ map('x', '<leader>gb', '<ESC><CMD>lua require("Comment.api").toggle_blockwise_op
 ---------------
 -- Nvim Tree --
 ---------------
-map("n", "<leader>n", ":NvimTreeToggle<CR>")
+-- map("n", "<leader>n", ":NvimTreeToggle<CR>")
 
 ---------------
 -- Telescope --
@@ -60,3 +60,10 @@ map("n", "<leader>fh", createCmd("help_tags"))
 map("n", "<leader>ft", createCmd("colorscheme"))
 
 map('n', '<leader>o', "<cmd>lua require('fzf-lua').files()<CR>")
+
+--------------
+-- Neo Tree --
+--------------
+map("n", "<leader>n", ":Neotree toggle<CR>")
+map("n", "\\", ":Neotree reveal<CR>")
+

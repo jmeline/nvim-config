@@ -17,6 +17,7 @@ local opt = vim.opt         		      -- Set options (global/buffer/windows-scoped
 
 g.noshowmode = true -- Disables standart -INSERT-, -NORMAL-, etc
 g.noswapfile = true
+g.notimeout = true
 cmd [[
     set timeout timeoutlen=200
   set notimeout nottimeout
@@ -42,7 +43,6 @@ opt.ignorecase = true                 -- Ignore case letters when search
 opt.smartcase = true                  -- Ignore lowercase for the whole pattern
 opt.linebreak = true                  -- Wrap on word boundary
 opt.termguicolors = true              -- Enable 24-bit RGB colors
-
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
@@ -58,6 +58,7 @@ opt.hidden = true                     -- Enable background buffers
 opt.history = 100                     -- Remember N lines in history
 opt.lazyredraw = true                 -- Faster scrolling
 opt.synmaxcol = 240                   -- Max column for syntax highlight
+
 
 -----------------------------------------------------------
 -- Autocommands
@@ -114,7 +115,6 @@ cmd [[
     autocmd TermOpen * startinsert
     autocmd BufLeave term://* stopinsert
 ]]
-
 -----------------------------------------------------------
 -- Startup
 -----------------------------------------------------------

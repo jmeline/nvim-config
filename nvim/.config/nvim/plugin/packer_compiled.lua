@@ -125,10 +125,21 @@ _G.packer_plugins = {
     path = "/home/jmeline/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
   },
+  ["neo-tree.nvim"] = {
+    config = { "\27LJ\2\n�\15\0\0\6\0001\0M6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\3\0009\0\4\0'\2\5\0005\3\6\0B\0\3\0016\0\0\0009\0\3\0009\0\4\0'\2\a\0005\3\b\0B\0\3\0016\0\0\0009\0\3\0009\0\4\0'\2\t\0005\3\n\0B\0\3\0016\0\0\0009\0\3\0009\0\4\0'\2\v\0005\3\f\0B\0\3\0016\0\r\0'\2\14\0B\0\2\0029\0\15\0005\2\16\0005\3\18\0005\4\17\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\25\0005\5\24\0=\5\26\4=\4\27\3=\3\28\0025\3\29\0005\4\30\0=\4\31\3=\3 \0024\3\0\0=\3!\0025\3&\0005\4\"\0005\5#\0=\5$\0044\5\0\0=\5%\4=\4'\3=\3(\0025\3)\0005\4+\0005\5*\0=\5\31\4=\4 \3=\3,\0025\3/\0005\4-\0005\5.\0=\5\31\4=\4 \3=\3\27\2B\0\2\0016\0\0\0009\0\1\0'\0020\0B\0\2\1K\0\1\0#nnoremap \\ :Neotree reveal<cr>\1\0\0\1\0\a\aga\17git_add_file\agg\24git_commit_and_push\agu\21git_unstage_file\agc\15git_commit\6A\16git_add_all\agp\rgit_push\agr\20git_revert_file\1\0\1\rposition\nfloat\fbuffers\1\0\0\1\0\1\abd\18buffer_delete\1\0\1\18show_unloaded\2\15filesystem\19filtered_items\1\0\3\27use_libuv_file_watcher\2\24follow_current_file\2\26hijack_netrw_behavior\17open_default\15never_show\17hide_by_name\1\3\0\0\14.DS_Store\14thumbs.db\1\0\3\20hide_gitignored\2\18hide_dotfiles\2\fvisible\1\18nesting_rules\vwindow\rmappings\1\0\21\6m\tmove\6/\17fuzzy_finder\6p\25paste_from_clipboard\6x\21cut_to_clipboard\6c\tcopy\6y\22copy_to_clipboard\6r\vrename\6f\21filter_on_submit\6d\vdelete\n<c-x>\17clear_filter\6s\16open_vsplit\6R\frefresh\6H\18toggle_hidden\t<bs>\16navigate_up\6a\badd\6C\15close_node\6.\rset_root\6S\15open_split\t<cr>\topen\18<2-LeftMouse>\topen\6q\17close_window\1\0\2\nwidth\3(\rposition\tleft\30default_component_configs\15git_status\fsymbols\1\0\0\1\0\t\nadded\b✚\rconflict\b\frenamed\b\vstaged\b\runstaged\b\fignored\b\14untracked\b\rmodified\b\fdeleted\b✖\tname\1\0\2\19trailing_slash\1\26use_git_status_colors\2\ticon\1\0\4\fdefault\6*\16folder_open\b\17folder_empty\bﰊ\18folder_closed\b\vindent\1\0\0\1\0\t\14highlight\24NeoTreeIndentMarker\23expander_collapsed\b\23last_indent_marker\b└\18indent_marker\b│\17with_markers\2\fpadding\3\1\16indent_size\3\2\23expander_highlight\20NeoTreeExpander\22expander_expanded\b\1\0\4\23popup_border_style\frounded\25close_if_last_window\1\23enable_diagnostics\2\22enable_git_status\2\nsetup\rneo-tree\frequire\1\0\2\vtexthl\23DiagnosticSignHint\ttext\b\23DiagnosticSignHint\1\0\2\vtexthl\23DiagnosticSignInfo\ttext\t \23DiagnosticSignInfo\1\0\2\vtexthl\23DiagnosticSignWarn\ttext\t \23DiagnosticSignWarn\1\0\2\vtexthl\24DiagnosticSignError\ttext\t \24DiagnosticSignError\16sign_define\afn0 let g:neo_tree_remove_legacy_commands = 1 \bcmd\bvim\0" },
+    loaded = true,
+    path = "/home/jmeline/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
   ["neofsharp.vim"] = {
     loaded = true,
     path = "/home/jmeline/.local/share/nvim/site/pack/packer/start/neofsharp.vim",
     url = "https://github.com/adelarsq/neofsharp.vim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/jmeline/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
@@ -224,14 +235,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
+-- Config for: neo-tree.nvim
+time([[Config for neo-tree.nvim]], true)
+try_loadstring("\27LJ\2\n�\15\0\0\6\0001\0M6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\3\0009\0\4\0'\2\5\0005\3\6\0B\0\3\0016\0\0\0009\0\3\0009\0\4\0'\2\a\0005\3\b\0B\0\3\0016\0\0\0009\0\3\0009\0\4\0'\2\t\0005\3\n\0B\0\3\0016\0\0\0009\0\3\0009\0\4\0'\2\v\0005\3\f\0B\0\3\0016\0\r\0'\2\14\0B\0\2\0029\0\15\0005\2\16\0005\3\18\0005\4\17\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\25\0005\5\24\0=\5\26\4=\4\27\3=\3\28\0025\3\29\0005\4\30\0=\4\31\3=\3 \0024\3\0\0=\3!\0025\3&\0005\4\"\0005\5#\0=\5$\0044\5\0\0=\5%\4=\4'\3=\3(\0025\3)\0005\4+\0005\5*\0=\5\31\4=\4 \3=\3,\0025\3/\0005\4-\0005\5.\0=\5\31\4=\4 \3=\3\27\2B\0\2\0016\0\0\0009\0\1\0'\0020\0B\0\2\1K\0\1\0#nnoremap \\ :Neotree reveal<cr>\1\0\0\1\0\a\aga\17git_add_file\agg\24git_commit_and_push\agu\21git_unstage_file\agc\15git_commit\6A\16git_add_all\agp\rgit_push\agr\20git_revert_file\1\0\1\rposition\nfloat\fbuffers\1\0\0\1\0\1\abd\18buffer_delete\1\0\1\18show_unloaded\2\15filesystem\19filtered_items\1\0\3\27use_libuv_file_watcher\2\24follow_current_file\2\26hijack_netrw_behavior\17open_default\15never_show\17hide_by_name\1\3\0\0\14.DS_Store\14thumbs.db\1\0\3\20hide_gitignored\2\18hide_dotfiles\2\fvisible\1\18nesting_rules\vwindow\rmappings\1\0\21\6m\tmove\6/\17fuzzy_finder\6p\25paste_from_clipboard\6x\21cut_to_clipboard\6c\tcopy\6y\22copy_to_clipboard\6r\vrename\6f\21filter_on_submit\6d\vdelete\n<c-x>\17clear_filter\6s\16open_vsplit\6R\frefresh\6H\18toggle_hidden\t<bs>\16navigate_up\6a\badd\6C\15close_node\6.\rset_root\6S\15open_split\t<cr>\topen\18<2-LeftMouse>\topen\6q\17close_window\1\0\2\nwidth\3(\rposition\tleft\30default_component_configs\15git_status\fsymbols\1\0\0\1\0\t\nadded\b✚\rconflict\b\frenamed\b\vstaged\b\runstaged\b\fignored\b\14untracked\b\rmodified\b\fdeleted\b✖\tname\1\0\2\19trailing_slash\1\26use_git_status_colors\2\ticon\1\0\4\fdefault\6*\16folder_open\b\17folder_empty\bﰊ\18folder_closed\b\vindent\1\0\0\1\0\t\14highlight\24NeoTreeIndentMarker\23expander_collapsed\b\23last_indent_marker\b└\18indent_marker\b│\17with_markers\2\fpadding\3\1\16indent_size\3\2\23expander_highlight\20NeoTreeExpander\22expander_expanded\b\1\0\4\23popup_border_style\frounded\25close_if_last_window\1\23enable_diagnostics\2\22enable_git_status\2\nsetup\rneo-tree\frequire\1\0\2\vtexthl\23DiagnosticSignHint\ttext\b\23DiagnosticSignHint\1\0\2\vtexthl\23DiagnosticSignInfo\ttext\t \23DiagnosticSignInfo\1\0\2\vtexthl\23DiagnosticSignWarn\ttext\t \23DiagnosticSignWarn\1\0\2\vtexthl\24DiagnosticSignError\ttext\t \24DiagnosticSignError\16sign_define\afn0 let g:neo_tree_remove_legacy_commands = 1 \bcmd\bvim\0", "config", "neo-tree.nvim")
+time([[Config for neo-tree.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
