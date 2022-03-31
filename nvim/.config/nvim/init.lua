@@ -10,18 +10,19 @@ require "core/keymaps"
 require "core/colorscheme"
 require "packer_init"
 
+
 -------------------- Load PLUGINS ----------------------------------
+
 require "plugins/nvim-tree"
 require "plugins/lualine"
-require "plugins/compe-completion"
+require "plugins/nvim-cmp"
+require "plugins/luasnip"
 require "plugins/nvim-lsp-installer"
 require "plugins/nvim-lspconfig"
 require "plugins/nvim-treesitter"
 require "plugins/nvim-ts-rainbow"
 require "plugins/toggleterm"
 require "plugins/telescope"
-
--- require "plugins/vsnip-config"
 
 -- map('n', '<leader>o', '<cmd>Files<CR>')
 -- map('n', '<leader>r', '<cmd>Rg<CR>')
