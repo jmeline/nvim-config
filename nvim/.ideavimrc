@@ -1,0 +1,50 @@
+" https://ikenox.info/blog/getting-started-ideavim/
+nnoremap ,e :action SearchEverywhere<CR>
+nnoremap ,g :action FindInPath<CR>
+nnoremap ,s :action FileStructurePopup<CR>
+
+nnoremap ,c :action CommentByLineComment<CR>
+vnoremap ,c :action CommentByLineComment<CR>
+
+nnoremap ,a :action GotoAction<CR>
+vnoremap ,a :action GotoAction<CR>
+
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gb :action JumpToLastChange<CR>
+
+nnoremap ,u :action FindUsages<CR>
+nnoremap ,rn :action RenameElement<CR>
+
+nnoremap == :action ReformatCode<CR>
+vnoremap == :action ReformatCode<CR>
+" nnoremap <C-CR> :action ShowIntentionActions<CR>
+
+set scrolloff=3
+set ignorecase smartcase
+set showmode
+set history=1000
+
+" enable vim surround
+set surround
+
+" enable ideajoin
+set ideajoin
+
+" remove the bell sounds 
+set visualbell
+"set noerrorbells
+
+" easy window navigation
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
+
+" built in search looks better
+nnoremap / :action Find<cr>
+" but preserve ideavim search
+nnoremap g/ /
+
+source ~/.ideavim.keymaps
