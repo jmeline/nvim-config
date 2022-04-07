@@ -1,26 +1,29 @@
+let mapleader = ','
+
 " https://ikenox.info/blog/getting-started-ideavim/
-nnoremap ,e :action SearchEverywhere<CR>
-nnoremap ,g :action FindInPath<CR>
-nnoremap ,s :action FileStructurePopup<CR>
+nnoremap <leader>e :action SearchEverywhere<CR>
+nnoremap <leader>g :action FindInPath<CR>
+nnoremap <leader>s :action FileStructurePopup<CR>
 
-nnoremap ,c :action CommentByLineComment<CR>
-vnoremap ,c :action CommentByLineComment<CR>
+nnoremap <leader>c :action CommentByLineComment<CR>
+vnoremap <leader>c :action CommentByLineComment<CR>
 
-nnoremap ,a :action GotoAction<CR>
-vnoremap ,a :action GotoAction<CR>
+nnoremap <leader>a :action GotoAction<CR>
+vnoremap <leader>a :action GotoAction<CR>
 
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gs :action GotoSuperMethod<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gb :action JumpToLastChange<CR>
 
-nnoremap ,u :action FindUsages<CR>
-nnoremap ,rn :action RenameElement<CR>
+nnoremap <leader>u :action FindUsages<CR>
+nnoremap <leader>rn :action RenameElement<CR>
 
 nnoremap == :action ReformatCode<CR>
 vnoremap == :action ReformatCode<CR>
 " nnoremap <C-CR> :action ShowIntentionActions<CR>
 
+set hlsearch
 set scrolloff=3
 set ignorecase smartcase
 set showmode
@@ -41,6 +44,16 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
 nnoremap <c-h> <c-w>h
 nnoremap <c-k> <c-w>k
+
+" easy system clipboard copy/paste
+noremap <leader>y "*y
+noremap <leader>yy "*Y
+noremap <leader>p "*p
+noremap <leader>P "*P
+
+" remove extra whitespace
+nmap <leader><space> :%s/\s\+$<CR>
+nnoremap <leader>l :action EditorToggleShowWhitespaces<cr>
 
 " built in search looks better
 nnoremap / :action Find<cr>
