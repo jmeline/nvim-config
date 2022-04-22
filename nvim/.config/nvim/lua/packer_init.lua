@@ -105,4 +105,5 @@ require'packer'.startup(function()
   use 'Mofiqul/dracula.nvim'
 
   use 'adelarsq/neofsharp.vim'
+  use 'hashivim/vim-terraform'
 end)

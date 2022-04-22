@@ -22,6 +22,7 @@ require "plugins/nvim-treesitter"
 require "plugins/nvim-ts-rainbow"
 require "plugins/toggleterm"
 require "plugins/telescope"
+require "plugins/lspconfig"
 
 -- map('n', '<leader>o', '<cmd>Files<CR>')
 -- map('n', '<leader>r', '<cmd>Rg<CR>')
