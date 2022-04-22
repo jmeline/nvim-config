@@ -14,6 +14,7 @@ require'nvim-treesitter.configs'.setup {
         "bash",
         "lua",
         "json",
+        "hcl" -- terraform
         -- "python"
         -- "rust",
         -- "go"
