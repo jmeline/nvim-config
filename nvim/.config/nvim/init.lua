@@ -22,7 +22,7 @@ require "plugins/nvim-treesitter"
 require "plugins/nvim-ts-rainbow"
 require "plugins/toggleterm"
 require "plugins/telescope"
-require "plugins/lspconfig"
+require "plugins/lspconfig-terraform"
 
 -- map('n', '<leader>o', '<cmd>Files<CR>')
 -- map('n', '<leader>r', '<cmd>Rg<CR>')
