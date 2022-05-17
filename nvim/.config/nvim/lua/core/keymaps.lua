@@ -67,3 +67,8 @@ map('n', '<leader>o', "<cmd>lua require('fzf-lua').files()<CR>")
 map("n", "<leader>n", ":Neotree toggle<CR>")
 map("n", "\\", ":Neotree reveal<CR>")
 
+
+---------------------
+-- custom functions--
+---------------------
+map("n", "<leader>fj", ":%!python3 -m json.tool<CR>")

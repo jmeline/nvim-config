@@ -1,21 +1,26 @@
-local lsp_installer = require("nvim-lsp-installer")
+require("nvim-lsp-installer").setup{}
 
-lsp_installer.on_server_ready(function(server)
-  local opts = {}
-  if server.name == "sumneko_lua" then
-    opts = {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { 'vim', 'use' }
-          },
-          --workspace = {
-          -- Make the server aware of Neovim runtime files
-          --library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true}
-          --}
-        }
-      }
+local lspconfig = require("lspconfig")
+lspconfig.sumneko_lua.setup{
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim', 'use' }
+      },
+      --workspace = {
+      -- Make the server aware of Neovim runtime files
+      --library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true}
+      --}
     }
-  end
-  server:setup(opts) 
-end)
+  }
+}
+
+-- lsp_installer.on_server_ready(function(server)
+--   local opts = {}
+--   if server.name == "sumneko_lua" then
+--     opts = {
+--
+--     }
+--   end
+--   server:setup(opts)
+-- end)

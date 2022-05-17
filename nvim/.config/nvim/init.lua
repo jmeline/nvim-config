@@ -10,13 +10,12 @@ require "core/keymaps"
 require "core/colorscheme"
 require "packer_init"
 
-
 -------------------- Load PLUGINS ----------------------------------
 
 require "plugins/lualine"
 require "plugins/nvim-cmp"
 require "plugins/luasnip"
-require "plugins/nvim-lsp-installer"
+require "plugins/lsp-installer"
 require "plugins/nvim-lspconfig"
 require "plugins/nvim-treesitter"
 require "plugins/nvim-ts-rainbow"
