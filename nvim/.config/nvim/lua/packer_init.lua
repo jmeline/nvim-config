@@ -1,42 +1,65 @@
-local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
 local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
+local execute = vim.api.nvim_command
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
--- Auto install packer if it does not exist
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+-- bootstrap packer if not installed
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+	fn.system({
+		"git",
+		"clone",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	})
+	execute("packadd packer.nvim")
 end
 
-cmd [[packadd packer.nvim]]
+-- returns the require for use in `config` parameter of packer's use
+-- expects the name of the config file
+function get_config(name)
+	return string.format('require("config/%s")', name)
+end
 
-require'packer'.startup(function()
-  use 'wbthomason/packer.nvim'
-  use {
+
+-- initialize and configure packer
+local packer = require("packer")
+
+packer.init({
+	enable = true, -- enable profiling via :PackerCompile profile=true
+	threshold = 0, -- the amount in ms that a plugins load time must be over for it to be included in the profile
+})
+
+packer.startup(function(use)
+  use ('wbthomason/packer.nvim')
+  use ({
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer',
-  }
-  use 'nvim-lua/lsp_extensions.nvim'
-  use 'nvim-lua/completion-nvim'
+  })
+  use ('nvim-lua/lsp_extensions.nvim')
+  use ('nvim-lua/completion-nvim')
+  use ({"numToStr/Navigator.nvim", config = get_config("navigator")})
+  use ('rafamadriz/friendly-snippets')
 
-  use 'rafamadriz/friendly-snippets'
+  use ({
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-nvim-lsp'}
+  })                        -- completion provided in lua
 
-  use 'hrsh7th/nvim-cmp'                        -- completion provided in lua
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-nvim-lsp'
 
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
 
   use 'onsails/lspkind-nvim'
   use 'kyazdani42/nvim-web-devicons'               -- for file icons
-  use 'kyazdani42/nvim-tree.lua'                   -- file explorer in lua
+  -- use 'kyazdani42/nvim-tree.lua'                   -- file explorer in lua
   use 'hoob3rt/lualine.nvim'                       -- blazingly fast statusline
-  use {
+  use ({
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
-  }
+  })
   use {
     'numToStr/Comment.nvim',
     config = function()
@@ -97,7 +120,6 @@ require'packer'.startup(function()
       require('nvim-autopairs').setup()
     end
   }
-  use 'christoomey/vim-tmux-navigator'
 
   use 'mattn/emmet-vim'
   use 'peitalin/vim-jsx-typescript'

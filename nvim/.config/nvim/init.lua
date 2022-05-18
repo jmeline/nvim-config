@@ -12,16 +12,16 @@ require "packer_init"
 
 -------------------- Load PLUGINS ----------------------------------
 
-require "plugins/lualine"
-require "plugins/nvim-cmp"
-require "plugins/luasnip"
-require "plugins/lsp-installer"
-require "plugins/nvim-lspconfig"
-require "plugins/nvim-treesitter"
-require "plugins/nvim-ts-rainbow"
-require "plugins/toggleterm"
-require "plugins/telescope"
-require "plugins/lspconfig-terraform"
+require "configs/lualine"
+require "configs/nvim-cmp"
+require "configs/luasnip"
+require "configs/lsp-installer"
+require "configs/nvim-lspconfig"
+require "configs/nvim-treesitter"
+require "configs/nvim-ts-rainbow"
+require "configs/toggleterm"
+require "configs/telescope"
+require "configs/lspconfig-terraform"
 
 -- map('n', '<leader>o', '<cmd>Files<CR>')
 -- map('n', '<leader>r', '<cmd>Rg<CR>')
