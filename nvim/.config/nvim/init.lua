@@ -13,7 +13,7 @@ require "packer_init"
 -------------------- Load PLUGINS ----------------------------------
 
 require "configs/lualine"
-require "configs/nvim-cmp"
+-- require "configs/cmp"
 require "configs/luasnip"
 require "configs/lsp-installer"
 require "configs/nvim-lspconfig"

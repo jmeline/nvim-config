@@ -1,8 +1,12 @@
 local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
 local execute = vim.api.nvim_command
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
--- bootstrap packer if not installed
+-- Auto install packer if it does not exist
+local data_path = fn.stdpath('data')
+local compile_path = data_path..'/site/plugin/packer_compiled.lua'
+local install_path = data_path..'/site/pack/packer/start/packer.nvim'
+
+-- Bootstrap Packer
 if fn.empty(fn.glob(install_path)) > 0 then
 	fn.system({
 		"git",
@@ -16,12 +20,14 @@ end
 -- returns the require for use in `config` parameter of packer's use
 -- expects the name of the config file
 function get_config(name)
-	return string.format('require("config/%s")', name)
+	return string.format('require("configs/%s")', name)
 end
 
-
 -- initialize and configure packer
-local packer = require("packer")
+local status_ok, packer = pcall(require, 'packer')
+if not status_ok then
+    return
+end
 
 packer.init({
 	enable = true, -- enable profiling via :PackerCompile profile=true
@@ -45,7 +51,8 @@ packer.startup(function(use)
       'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-nvim-lsp'}
+      'hrsh7th/cmp-nvim-lsp'},
+    config = get_config("cmp")
   })                        -- completion provided in lua
 
 
