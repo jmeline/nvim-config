@@ -1,0 +1,5 @@
+#Ignore everything
+neovim/code/*
+
+# But not these files...
+!neovim/code/justfile
