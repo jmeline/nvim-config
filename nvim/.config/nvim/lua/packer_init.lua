@@ -36,11 +36,13 @@ packer.init({
 
 packer.startup(function(use)
   use ('wbthomason/packer.nvim')
+  use 'lewis6991/impatient'
   use ({
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer',
   })
   use ('nvim-lua/lsp_extensions.nvim')
+  use ('kovisoft/slimv')
   use ('nvim-lua/completion-nvim')
   use ({"numToStr/Navigator.nvim", config = get_config("navigator")})
   use ('rafamadriz/friendly-snippets')
@@ -130,9 +132,9 @@ packer.startup(function(use)
 
   use 'mattn/emmet-vim'
   use 'peitalin/vim-jsx-typescript'
-  use 'Pocco81/TrueZen.nvim'
   use 'Mofiqul/dracula.nvim'
 
   use 'adelarsq/neofsharp.vim'
   use 'hashivim/vim-terraform'
+  use 'simrat39/rust-tools.nvim'
 end)

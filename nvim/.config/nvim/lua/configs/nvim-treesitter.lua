@@ -9,6 +9,8 @@ require'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "javascript",
         "clojure",
+        "rust",
+        "toml",
         "html",
         "css",
         "bash",
@@ -16,7 +18,6 @@ require'nvim-treesitter.configs'.setup {
         "json",
         "hcl" -- terraform
         -- "python"
-        -- "rust",
         -- "go"
     },
     highlight = {
@@ -25,7 +26,12 @@ require'nvim-treesitter.configs'.setup {
     },
     indent = {
       enable = true
-    }
+    },
+    rainbow = {
+      enable = true,
+      extended_mode = true,
+      max_file_lines = nil
+  }
 }
 
 local opt = vim.opt  -- to set options
