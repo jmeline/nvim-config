@@ -1,0 +1,21 @@
+CMAKE_BUILD_TYPE := "RelWithDebInfo"
+CMAKE_CXX_FLAGS  := "-march=native"
+CMAKE_CXX_OPTS   := "-j23"
+
+clone:
+    git init .
+    git remote add origin https://github.com/neovim/neovim
+    git pull origin master
+
+stable:
+    git checkout stable
+
+packages:
+    sudo pacman -S base-devel cmake unzip ninja tree-sitter curl
+
+build:
+    sudo rm -rf .deps build
+    sudo make CMAKE_BUILD_TYPE={{CMAKE_BUILD_TYPE}} CMAKE_CXX_FLAGS={{CMAKE_CXX_FLAGS}} {{CMAKE_CXX_OPTS}}
+
+install: build
+    sudo make install
