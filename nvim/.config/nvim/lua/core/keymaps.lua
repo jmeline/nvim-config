@@ -32,11 +32,24 @@ map("n", "<leader>P", '"+p')
 
 -- begin substituting the word under the cursor
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
 -- make the current file executable without having to leave the editor
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+-- Move block of code up
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- Move block of code down
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+-- keep cursor in the same place when joining lines
+vim.keymap.set("n", "J", "mzJ`z")
+
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- keep cursor in the middle while searching
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
 ------------
--- Packer --
+-- prevents --
 ------------
 map("n", "<leader>ps", ":PackerSync<CR>")
 
@@ -45,27 +58,11 @@ map("n", "<leader>ps", ":PackerSync<CR>")
 ---------------
 -- map("n", "<leader>n", ":NvimTreeToggle<CR>")
 
----------------
--- Telescope --
----------------
--- function createCmd(cmd)
---   return "<cmd>lua require('telescope.builtin')."..cmd.."()<CR>"
--- end
---
--- map("n", "<leader>fo", createCmd("find_files"))
--- map("n", "<leader>fr", createCmd("live_grep"))
--- map("n", "<leader>fb", createCmd("buffers"))
--- map("n", "<leader>fh", createCmd("help_tags"))
--- map("n", "<leader>ft", createCmd("colorscheme"))
---
--- map('n', '<leader>o', "<cmd>lua require('fzf-lua').files()<CR>")
-
 --------------
 -- Neo Tree --
 --------------
 map("n", "<leader>n", ":Neotree toggle<CR>")
 map("n", "\\", ":Neotree reveal<CR>")
-
 
 ---------------------
 -- custom functions--
