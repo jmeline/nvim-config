@@ -30,6 +30,11 @@ map("n", "<leader>p", '"*p')
 map("n", "<leader>Y", '"+y')
 map("n", "<leader>P", '"+p')
 
+-- begin substituting the word under the cursor
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- make the current file executable without having to leave the editor
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 ------------
 -- Packer --
 ------------
