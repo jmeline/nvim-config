@@ -48,7 +48,7 @@ return require('packer').startup(function(use)
   use ('mbbill/undotree')
 
   -- use 'onsails/lspkind-nvim'
-  use 'kyazdani42/nvim-web-devicons'               -- for file icons
+  -- use 'kyazdani42/nvim-web-devicons'               -- for file icons
   -- use 'kyazdani42/nvim-tree.lua'                   -- file explorer in lua
   use 'hoob3rt/lualine.nvim'                       -- blazingly fast statusline
 
@@ -117,7 +117,12 @@ return require('packer').startup(function(use)
   use 'machakann/vim-sandwich'
   -- use 'mattn/emmet-vim'
   -- use 'peitalin/vim-jsx-typescript'
+  -- Themes
   use 'Mofiqul/dracula.nvim'
+  use 'eddyekofo94/gruvbox-flat.nvim'
+  use 'catppuccin/nvim'
+  use 'haishanh/night-owl.vim'
+  use 'folke/tokyonight.nvim'
 
   use 'adelarsq/neofsharp.vim'
   use 'hashivim/vim-terraform'
