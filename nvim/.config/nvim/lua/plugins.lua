@@ -63,6 +63,14 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'               -- for file icons
   -- use 'kyazdani42/nvim-tree.lua'                   -- file explorer in lua
   use 'hoob3rt/lualine.nvim'                       -- blazingly fast statusline
+
+  -- FZF: Fast searching
+  use {'ibhagwan/fzf-lua',
+    -- optional for icon support
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    use = { 'junegunn/fzf', run = './install --bin', } -- ensure fzf is installed
+  }
+
   use {
     'numToStr/Comment.nvim',
     config = function()
