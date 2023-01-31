@@ -130,10 +130,20 @@ _G.packer_plugins = {
     path = "/home/jmeline/.local/share/nvim/site/pack/packer/start/fzf-lua",
     url = "https://github.com/ibhagwan/fzf-lua"
   },
-  ["gruvbox-flat.nvim"] = {
+  gruvbox = {
     loaded = true,
-    path = "/home/jmeline/.local/share/nvim/site/pack/packer/start/gruvbox-flat.nvim",
-    url = "https://github.com/eddyekofo94/gruvbox-flat.nvim"
+    path = "/home/jmeline/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
+  },
+  ["gruvbox-material"] = {
+    loaded = true,
+    path = "/home/jmeline/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
+  },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/home/jmeline/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,

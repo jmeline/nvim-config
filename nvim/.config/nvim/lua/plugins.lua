@@ -117,12 +117,15 @@ return require('packer').startup(function(use)
   use 'machakann/vim-sandwich'
   -- use 'mattn/emmet-vim'
   -- use 'peitalin/vim-jsx-typescript'
+
   -- Themes
   use 'Mofiqul/dracula.nvim'
-  use 'eddyekofo94/gruvbox-flat.nvim'
+  use 'sainnhe/gruvbox-material'
   use 'catppuccin/nvim'
   use 'haishanh/night-owl.vim'
   use 'folke/tokyonight.nvim'
+  use 'rebelot/kanagawa.nvim'
+  use 'morhetz/gruvbox'
 
   use 'adelarsq/neofsharp.vim'
   use 'hashivim/vim-terraform'
