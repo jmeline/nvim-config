@@ -1,6 +1,6 @@
 local Terminal = require("toggleterm.terminal").Terminal
 
-require"toggleterm".setup{
+require("toggleterm").setup{
   -- size can be a number or function which is passed the current terminal
   size = function(term)
     if term.direction == "horizontal" then
@@ -48,14 +48,7 @@ require"toggleterm".setup{
 }
 
 
-local lazygit =
-    Terminal:new(
-    {
-        cmd = "lazygit",
-        direction = "float",
-        hidden = true
-    }
-)
+local lazygit = Terminal:new({cmd = "lazygit", direction = "float", hidden = true })
 
 function _lazygit_toggle()
     lazygit:toggle()
