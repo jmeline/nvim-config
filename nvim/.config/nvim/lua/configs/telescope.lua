@@ -8,6 +8,11 @@ telescope.setup{
       case_mode = "smart_case"
     }
   },
+  pickers = {
+    find_files = {
+      theme = "dropdown"
+    }
+  },
   defaults = {
     vimgrep_arguments = {
       'rg',
