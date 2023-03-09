@@ -37,6 +37,10 @@ set surround
 " enable ideajoin
 set ideajoin
 
+" enable NERDTree
+set NERDTree
+nnoremap <leader>n :NERDTreeToggle<CR>
+
 " remove the bell sounds
 set visualbell
 "set noerrorbells
