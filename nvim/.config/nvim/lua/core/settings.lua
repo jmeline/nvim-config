@@ -52,6 +52,7 @@ opt.signcolumn = "yes"                -- Enable gutter for git and other notific
 opt.hlsearch = false                  -- highlight all matches on previous search pattern
 opt.incsearch = true                  -- Incremental search is Sick!
 opt.updatetime = 50                   -- faster completion
+opt.scrolloff = 10
 opt.foldenable = false
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
