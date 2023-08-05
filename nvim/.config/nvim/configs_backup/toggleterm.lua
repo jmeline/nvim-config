@@ -50,7 +50,7 @@ require("toggleterm").setup{
 
 local lazygit = Terminal:new({cmd = "lazygit", direction = "float", hidden = true })
 
-function _lazygit_toggle()
+local function _lazygit_toggle()
     lazygit:toggle()
 end
 
