@@ -6,7 +6,7 @@ lsp.preset('recommended')
 lsp.ensure_installed({
   'tsserver',
   'lua_ls',
-  'rust_analyzer',
+  -- 'rust_analyzer',
 })
 
 -- Fix Undefined global 'vim'
@@ -19,6 +19,33 @@ lsp.configure('lua_ls', {
     }
   }
 })
+vim.fn.sign_define(
+  'DiagnosticSignError',
+  { text = '', texthl = 'LspDiagnosticsDefaultError' }
+)
+
+vim.fn.sign_define(
+  'DiagnosticSignWarn',
+  { text = '', texthl = 'LspDiagnosticsDefaultWarning' }
+)
+
+vim.fn.sign_define(
+  'DiagnosticSignInfo',
+  { text = '', texthl = 'LspDiagnosticsDefaultInformation' }
+)
+
+vim.fn.sign_define(
+  'DiagnosticSignHint',
+  { text = '', texthl = 'LspDiagnosticsDefaultHint' }
+)
+-- vim.diagnostic.config({
+--   virtual_text = true,
+--   signs = true,
+--   update_in_insert = false,
+--   underline = true,
+--   severity_sort = false,
+--   float = true,
+-- })
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -39,13 +66,13 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.set_preferences({
-    suggest_lsp_servers = false,
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
-    }
+  suggest_lsp_servers = true,
+  sign_icons = {
+    error = '✘',
+    warn = '▲',
+    hint = '⚑',
+    info = ''
+  }
 })
 
 lsp.on_attach(function(client, bufnr)
