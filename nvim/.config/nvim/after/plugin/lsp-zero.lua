@@ -19,47 +19,56 @@ lsp.configure('lua_ls', {
     }
   }
 })
-vim.fn.sign_define(
-  'DiagnosticSignError',
-  { text = '', texthl = 'LspDiagnosticsDefaultError' }
-)
 
-vim.fn.sign_define(
-  'DiagnosticSignWarn',
-  { text = '', texthl = 'LspDiagnosticsDefaultWarning' }
-)
+-- Diagnostic icons
 
-vim.fn.sign_define(
-  'DiagnosticSignInfo',
-  { text = '', texthl = 'LspDiagnosticsDefaultInformation' }
-)
+local sign = function(opts)
+  vim.fn.sign_define(opts.name, {
+    texthl = opts.name,
+    text = opts.text,
+    numhl = ''
+  })
+end
 
-vim.fn.sign_define(
-  'DiagnosticSignHint',
-  { text = '', texthl = 'LspDiagnosticsDefaultHint' }
-)
--- vim.diagnostic.config({
---   virtual_text = true,
---   signs = true,
---   update_in_insert = false,
---   underline = true,
---   severity_sort = false,
---   float = true,
--- })
+sign({name = 'DiagnosticSignError', text = '✘'})
+sign({name = 'DiagnosticSignWarn', text = '▲'})
+sign({name = 'DiagnosticSignHint', text = '⚑'})
+sign({name = 'DiagnosticSignInfo', text = ''})
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select_opts),
+  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select_opts),
+  ['<C-y>'] = cmp.mapping.confirm({select = true}),
+  ['<CR>'] = cmp.mapping.confirm({select = false}),
   ["<C-Space>"] = cmp.mapping.complete(),
+
+  ['<Tab>'] = cmp.mapping(function(fallback)
+    local col = vim.fn.col('.') - 1
+
+    if cmp.visible() then
+      cmp.select_next_item(cmp_select_opts)
+    elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+      fallback()
+    else
+      cmp.complete()
+    end
+  end, {'i', 's'}),
+
+  ['<S-Tab>'] = cmp.mapping(function(fallback)
+    if cmp.visible() then
+      cmp.select_prev_item(cmp_select_opts)
+    else
+      fallback()
+    end
+  end, {'i', 's'}),
 })
 
 -- disable completion with tab
 -- this helps with copilot setup
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
+-- cmp_mappings['<Tab>'] = nil
+-- cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings
