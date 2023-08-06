@@ -11,18 +11,9 @@ return {
   -- FZF: Fast searching
   {'ibhagwan/fzf-lua', dependencies = {"nvim-tree/nvim-web-devicons"}},
   {'junegunn/fzf', build= './install --bin'},
-  {'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  },
+  {'numToStr/Comment.nvim' },
   {'glepnir/dashboard-nvim',
     event = 'VimEnter',
-    config = function()
-      require('dashboard').setup {
-        -- config
-      }
-    end,
     dependencies = { {'nvim-tree/nvim-web-devicons'}}
   },
   {"folke/trouble.nvim",
@@ -62,9 +53,5 @@ return {
   {'haishanh/night-owl.vim'},
   {'folke/tokyonight.nvim'},
   {'rebelot/kanagawa.nvim'},
-  {'morhetz/gruvbox'},
-
-  {'adelarsq/neofsharp.vim'},
-  {'hashivim/vim-terraform'},
-  {'simrat39/rust-tools.nvim'},
+  {'morhetz/gruvbox'}
 }

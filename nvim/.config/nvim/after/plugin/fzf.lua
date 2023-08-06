@@ -1,1 +1,4 @@
-vim.keymap.set('n', '<c-P>', "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true, silent = true })
+local map = require("core.utils").map
+
+-- key mappings
+map('n', '<leader>e', "<cmd>lua require('fzf-lua').files()<CR>")
