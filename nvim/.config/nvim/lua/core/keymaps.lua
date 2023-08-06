@@ -48,11 +48,6 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
----------------
--- Nvim Tree --
----------------
--- map("n", "<leader>n", ":NvimTreeToggle<CR>")
-
 --------------
 -- Neo Tree --
 --------------
