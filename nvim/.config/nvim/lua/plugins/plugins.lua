@@ -3,15 +3,9 @@ return {
   {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
   {'nvim-treesitter/playground'},
   {'akinsho/toggleterm.nvim'},
+  {'machakann/vim-sandwich'},
   {'nvim-lua/popup.nvim'},
-  {"folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
-  },
+  {'nvim-lualine/lualine.nvim'},
   {'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     dependencies = {
@@ -34,7 +28,6 @@ return {
       {'rafamadriz/friendly-snippets'},
     },
   },
-  -- {'onsails/lspkind.nvim'},
   {'mbbill/undotree'},
 
   -- FZF: Fast searching
@@ -44,6 +37,23 @@ return {
     config = function()
       require('Comment').setup()
     end
+  },
+  {'glepnir/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        -- config
+      }
+    end,
+    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  },
+  {"folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
   },
   -- {
   --   "nvim-neo-tree/neo-tree.nvim",
@@ -100,7 +110,6 @@ return {
       {"nvim-treesitter/nvim-treesitter"}
     }
   },
-  {'machakann/vim-sandwich'},
 
   -- Themes
   {'Mofiqul/dracula.nvim'},

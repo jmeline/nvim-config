@@ -1,27 +1,17 @@
 require('core')
-require('plugins')
------------------------ HELPERS ------------------------------
--- local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
--- local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
--- local opt = vim.opt  -- to set options
--- local o = vim.o
--- local g = vim.g      -- a table to access global variables
+-- require('plugins')
 
--------------------- Load PLUGINS ----------------------------------
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
--- require "configs/lualine"
--- require "configs/cmp"
--- require "configs/luasnip"
--- require "configs/mason"
--- require "configs/nvim-lspconfig"
--- require "configs/nvim-treesitter"
--- require "configs/nvim-ts-rainbow"
--- require "configs/toggleterm"
--- require "configs/telescope"
--- require "configs/lspconfig-terraform"
-
--- map('n', '<leader>o', '<cmd>Files<CR>')
--- map('n', '<leader>r', '<cmd>Rg<CR>')
--- map('n', '<leader>/', '<cmd>BLines<CR>')
--- map('n', '<leader>;', '<cmd>History:<CR>')
--- map('n', '<leader>g', '<cmd>GitFiles<CR>')
+require('lazy').setup('plugins')

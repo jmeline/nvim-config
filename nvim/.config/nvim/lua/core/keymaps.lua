@@ -1,5 +1,8 @@
 local map = require("core.utils").map
 
+-- Change leader to a comma
+vim.g.mapleader = ","
+
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 map("i", "jk", "<ESC>")
