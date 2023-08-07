@@ -11,7 +11,11 @@ return {
   -- FZF: Fast searching
   {'ibhagwan/fzf-lua', dependencies = {"nvim-tree/nvim-web-devicons"}},
   {'junegunn/fzf', build= './install --bin'},
-  {'numToStr/Comment.nvim' },
+  {'numToStr/Comment.nvim', config =
+    function()
+      require('Comment').setup()
+    end
+  },
   {'glepnir/dashboard-nvim',
     event = 'VimEnter',
     dependencies = { {'nvim-tree/nvim-web-devicons'}}
