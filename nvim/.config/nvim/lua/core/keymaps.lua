@@ -51,8 +51,8 @@ map("x", "<leader>p", [["_dP]])
 --------------
 -- Neo Tree --
 --------------
-map("n", "<leader>n", ":Neotree toggle<CR>")
-map("n", "\\", ":Neotree reveal<CR>")
+-- map("n", "<leader>n", ":Neotree toggle<CR>")
+-- map("n", "\\", ":Neotree reveal<CR>")
 
 ---------------------
 -- custom functions--
@@ -62,9 +62,3 @@ map("n", "<leader>fj", ":%!python3 -m json.tool<CR>")
 -------------
 -- Trouble --
 -------------
-map("n", "<leader>xx", "<cmd>TroubleToggle<cr>")
-map("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>")
-map("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>")
-map("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>")
-map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>")
-map("n", "gR", "<cmd>TroubleToggle lsp_references<cr>")

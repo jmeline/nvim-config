@@ -1,4 +1,6 @@
-return {
+
+return
+{
   {'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = {{'nvim-lua/plenary.nvim'}}},
   {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
   {'nvim-treesitter/playground'},
@@ -20,28 +22,6 @@ return {
     event = 'VimEnter',
     dependencies = { {'nvim-tree/nvim-web-devicons'}}
   },
-  {"folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
-  },
-  { 'alexghergh/nvim-tmux-navigation', config = function()
-    require('nvim-tmux-navigation').setup {
-      disable_when_zoomed = true, -- defaults to false
-      keybindings = {
-        left = "<C-h>",
-        down = "<C-j>",
-        up = "<C-k>",
-        right = "<C-l>",
-        last_active = "<C-\\>",
-        next = "<C-Space>",
-      }
-    }
-    end
-  },
 
   -- Autopair
   {'windwp/nvim-autopairs',
@@ -51,11 +31,11 @@ return {
   },
 
   -- Themes
-  {'Mofiqul/dracula.nvim'},
-  {'sainnhe/gruvbox-material'},
-  {'catppuccin/nvim'},
-  {'haishanh/night-owl.vim'},
-  {'folke/tokyonight.nvim'},
-  {'rebelot/kanagawa.nvim'},
-  {'morhetz/gruvbox'}
+  {'Mofiqul/dracula.nvim', lazy=true},
+  {'sainnhe/gruvbox-material', lazy=true},
+  {'catppuccin/nvim', lazy=true},
+  {'haishanh/night-owl.vim', lazy=true},
+  {'folke/tokyonight.nvim', lazy=true},
+  {'rebelot/kanagawa.nvim', lazy=true},
+  {'morhetz/gruvbox', lazy=true}
 }
