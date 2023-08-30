@@ -48,17 +48,8 @@ map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 map("x", "<leader>p", [["_dP]])
 
---------------
--- Neo Tree --
---------------
--- map("n", "<leader>n", ":Neotree toggle<CR>")
--- map("n", "\\", ":Neotree reveal<CR>")
-
 ---------------------
 -- custom functions--
 ---------------------
 map("n", "<leader>fj", ":%!python3 -m json.tool<CR>")
 
--------------
--- Trouble --
--------------
