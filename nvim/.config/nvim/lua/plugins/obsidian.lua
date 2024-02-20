@@ -7,8 +7,8 @@ return {
   event = {
     -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
     -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-    "BufReadPre ~/code/vault/**.md",
-    "BufNewFile ~/code/vault/**.md",
+    "BufReadPre " .. vim.fn.expand "~" .. "/code/vault/**.md",
+    "BufNewFile " .. vim.fn.expand "~" .. "/code/vault/**.md",
   },
   dependencies = {
     -- Required.
