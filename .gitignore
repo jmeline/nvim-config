@@ -3,3 +3,4 @@ neovim/code/*
 
 # But not these files...
 !neovim/code/justfile
+nvim/.config/nvim/lua/.DS_Store
