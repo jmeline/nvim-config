@@ -136,8 +136,14 @@ return
     ---@param url string
     follow_url_func = function(url)
       -- Open the URL in the default web browser.
-      vim.fn.jobstart({"open", url})  -- Mac OS
-      -- vim.fn.jobstart({"xdg-open", url})  -- linux
+      local OS = vim.loop.os_uname().sysname
+      if OS == "Darwin" then
+        vim.fn.jobstart({"open", url})  -- Mac OS
+      elseif OS == "Linux" then
+        vim.fn.jobstart({"xdg-open", url})  -- linux
+      else
+        print("Unsupported OS")
+      end
     end,
 
     -- see below for full list of options 👇
