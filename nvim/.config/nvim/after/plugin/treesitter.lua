@@ -9,7 +9,7 @@ require'nvim-treesitter.configs'.setup {
     "typescript",
     "query",
     "markdown",
-    "markdown_inline"
+    "markdown_inline",
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)

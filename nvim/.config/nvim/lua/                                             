@@ -1,0 +1,204 @@
+For this annual, I decided to write a small script to scrape all my PRs from the last year and then organize them to back up what I thought were my best moments. (https://github.com/jmeline/GetMyPullRequests). Here are the highlights.
+
+===================================================================================
+Jacob can be trusted to jump in the deep end and come up with solutions to problems
+===================================================================================
+## Played a crucial role with Genesys TWT on the Angular side and created compatibility with new conversation types when dispositions were written
+===
+    {
+      title: 'Feat 162509 - Genesys TWT P2 | Embedded 2020 Disposition',
+      created_at: '2023-08-14T10:00:06Z',
+      closed_at: '2023-08-21T21:35:12Z',
+      url: 'https://github.com/DriveTimeInc/bc.logic.communication.api/pull/399'
+    },
+    {
+      title: '162509 - Genesys TWT P2 | Embedded 2020 Disposition',
+      created_at: '2023-08-10T20:40:58Z',
+      closed_at: '2023-08-21T22:04:56Z',
+      url: 'https://github.com/DriveTimeInc/Vision2020/pull/1349'
+    },
+    {
+      title: '162509 - Genesys TWT P2 | Embedded 2020 Disposition',
+      created_at: '2023-08-07T14:55:08Z',
+      closed_at: '2023-08-10T20:41:00Z',
+      url: 'https://github.com/DriveTimeInc/Vision2020/pull/1347'
+    },
+    {
+      title: 'Genesys TWT P2 | Add automation tests for return conversation type ',
+      created_at: '2023-07-27T19:12:22Z',
+      closed_at: null,
+      url: 'https://github.com/DriveTimeInc/BridgecrestAPI-Account/pull/1166'
+    },
+    {
+      title: "Genesys TWT P2 | Bug | Add retry to Genesys Conversation in case participants aren't returned",
+      created_at: '2023-07-27T16:18:16Z',
+      closed_at: '2023-07-31T17:42:54Z',
+      url: 'https://github.com/DriveTimeInc/bc.logic.communication.api/pull/393'
+    },
+    {
+      title: 'Genesys TWT P2 | 162508 + 162507 Integration Branch | Add account logic webchat & sms',
+      created_at: '2023-07-25T16:48:39Z',
+      closed_at: '2023-08-01T22:26:31Z',
+      url: 'https://github.com/DriveTimeInc/bc.logic.communication.api/pull/392'
+    },
+    {
+      title: 'Genesys TWT P2 | Add Redis caching support for account logic webchat & sms ',
+      created_at: '2023-07-12T22:18:03Z',
+      closed_at: '2023-07-25T17:44:21Z',
+      url: 'https://github.com/DriveTimeInc/bc.logic.communication.api/pull/385' (Ended up questioning the usefulness of this but nonetheless, sought to improve our process)
+    },
+    {
+      title: 'Wip-162507: Genesys TWT P2 | Account Logic for Web Chat',
+      created_at: '2023-07-10T22:30:18Z',
+      closed_at: '2023-07-25T17:44:43Z',
+      url: 'https://github.com/DriveTimeInc/bc.logic.communication.api/pull/382'
+    },
+    {
+      title: '161871 - TWT Add WebChat and TwoWayText To AgentChannel Enum',
+      created_at: '2023-07-10T16:38:20Z',
+      closed_at: '2023-07-10T23:01:53Z',
+      url: 'https://github.com/DriveTimeInc/BridgecrestAPI-Account/pull/1155'
+    },
+    {
+      title: 'Wip-162508:  Genesys TWT P2 | Account Logic for SMS',
+      created_at: '2023-07-07T18:15:00Z',
+      closed_at: '2023-07-25T16:50:16Z',
+      url: 'https://github.com/DriveTimeInc/bc.logic.communication.api/pull/376'
+    },
+
+=============================================================================================
+Jacob always seeks to improve our processes, educate, and create more fault tolerant software
+=============================================================================================
+## Helped get new Payment SBQ out
+===
+    {
+      title: '157013 - BC API | Use new Payment SBQ and function',
+      created_at: '2023-12-12T21:16:08Z',
+      closed_at: '2024-01-24T22:19:29Z',
+      url: 'https://github.com/DriveTimeInc/BridgecrestAPI-Account/pull/1209'
+    },
+## Genesys TWT argo upload
+===
+    * Helped others get a more updated python version in dt repository 3.11
+    * Helped create a standard for logging to dataDog in python
+    * Used libraries such as Tenacity to help with retrying failed requests (network, sql, etc)
+        {
+          title: 'Feat 178623: Add retries to genesys outbound contact list validation',
+          created_at: '2023-11-27T23:32:52Z',
+          closed_at: '2023-12-11T18:38:07Z',
+          url: 'https://github.com/DriveTimeInc/bc.data.genesys-twt-file-upload.argo/pull/11'
+        },
+    * Greatly simplify python argo job for future DE owned work when choosing Python
+    * During this process, assisted DevOps with updating internal dt docker images
+    {
+      title: 'Add .Net 8 support: 8.0-jammy',
+      created_at: '2023-11-14T19:21:15Z',
+      closed_at: '2023-11-14T21:13:16Z',
+      url: 'https://github.com/DriveTimeInc/cx.template.base-images.docker/pull/26'
+    },
+    {
+      title: 'Update python docker image to use 3.11',
+      created_at: '2023-11-08T00:12:25Z',
+      closed_at: '2023-11-14T19:06:54Z',
+      url: 'https://github.com/DriveTimeInc/cx.template.base-images.docker/pull/23' (Devops ended up creating a separate PR off this)
+    },
+
+## Implemented Redis caching improvements and maintenance. Helped out with deploying v6 updates. Also deployed the pipe delimited format for space savings on redis for loan data. Uses about 700MB less than full json when stored.
+===
+    {
+      title: 'Feat-145919: Use new v6 Redis Azure instance',
+      created_at: '2023-03-31T21:02:34Z',
+      closed_at: '2023-05-24T02:39:52Z',
+      url: 'https://github.com/DriveTimeInc/bc.data.sharedloandata.api/pull/131'
+    },
+    {
+      title: 'Feat-145919: Use new v6 Redis Azure instance',
+      created_at: '2023-03-31T20:34:14Z',
+      closed_at: '2023-05-24T03:08:50Z',
+      url: 'https://github.com/DriveTimeInc/bc.data.testharness.api/pull/62'
+    },
+    {
+      title: 'Feat-145919: Use new v6 Redis Azure instance',
+      created_at: '2023-03-31T15:02:02Z',
+      closed_at: '2023-05-24T02:39:47Z',
+      url: 'https://github.com/DriveTimeInc/bc.logic.communication.api/pull/352'
+    },
+    {
+      title: 'feat-149056 store/parse pipe delimited to/from Redis for space saving',
+      created_at: '2023-05-15T19:01:18Z',
+      closed_at: '2023-06-06T21:52:13Z',
+      url: 'https://github.com/DriveTimeInc/bc.data.sharedloandata.api/pull/144'
+    },
+
+## Improving developer experience by providing the foundation for helping future e2e tests not fail because of feature flag states
+===
+    {
+      title: '#187956 | E2E Feature Flag Testing Setup',
+      created_at: '2024-03-06T20:23:52Z',
+      closed_at: '2024-03-15T17:24:38Z',
+      url: 'https://github.com/DriveTimeInc/Vision2020/pull/1384'
+    },
+
+## Helped get started on our Angular upgrade by removing old obsolete DT components
+===
+    {
+      title: 'Feat 180723 | Use Angular Material instead of dt-checkbox, dt-radio-button, dt-accordion',
+      created_at: '2024-01-25T18:24:29Z',
+      closed_at: '2024-02-13T21:57:29Z',
+      url: 'https://github.com/DriveTimeInc/Vision2020/pull/1379'
+    },
+
+## Helped with jump into issues across teams related to docker.
+===
+    {
+      title: '190003 | Run container as a non root user',
+      created_at: '2024-03-12T18:54:04Z',
+      closed_at: '2024-03-14T21:56:47Z',
+      url: 'https://github.com/DriveTimeInc/bc.logic.payments.api/pull/63'
+    },
+
+## Helped remove bank account information from requests in a couple projects
+===
+    {
+      title: 'Feat-168502 | Remove Bank Account Information from DataDog logs',
+      created_at: '2023-08-23T16:13:05Z',
+      closed_at: '2023-09-13T21:58:37Z',
+      url: 'https://github.com/DriveTimeInc/bc.logic.payments.api/pull/50'
+    },
+    * Introduced Launchdarkly into SSP's gateway project
+        {
+          title: 'Feat 168502 | Remove Bank Account Information from DataDog logs',
+          created_at: '2023-08-28T18:19:06Z',
+          closed_at: '2023-09-21T21:27:03Z',
+          url: 'https://github.com/DriveTimeInc/Self-Service-Portal/pull/808'
+        },
+    {
+      title: 'Feat-168502 | Remove Bank Account Information from DataDog Logs',
+      created_at: '2023-08-23T16:11:28Z',
+      closed_at: '2023-09-14T23:06:32Z',
+      url: 'https://github.com/DriveTimeInc/BridgecrestAPI-Account/pull/1173'
+    },
+
+## Along with a presentation to managers and teammembers, did some POCs on using Stryker within our pipelines
+===
+    * Currently only using it in SharedLoanData pipeline
+        https://dev.azure.com/drivetimeinc/Servicing/_build/results?buildId=220997&view=stryker-mutator.mutation-report-publisher.mutation-report-tab
+    * Has been a cool tool to experiment with and learning what makes better unit tests
+
+## Conduent research
+    * Owned the story crafting and the documentation around the ends and outs of the api as well as the SHAW system.
+
+====================================
+Things to work on for this next year
+====================================
+    * Speak up more in meetings
+    * Get better at estimations with stories
+        * Get better at breaking stories down into smaller pieces
+
+=======================================
+Things I would like to tackle this year
+=======================================
+    * .Net 6 -> 8 upgrades
+    * Do more profiling of c# code
+    * More Angular upgrades and improvements to Vision2020
+    * Continue to improve and expand my knowledge
